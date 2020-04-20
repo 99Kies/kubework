@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta2
+kind: ReplicaSet
+metadata:
+  name: mroom1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mroom1
+  template: 
+    metadata:
+      labels:
+        app: mroom1
+    spec:
+      containers:
+      - name: mroom1
+        image: mroom
+        imagePullPolicy: Never

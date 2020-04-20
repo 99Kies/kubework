@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: mroom
+spec:
+  replicas: 3
+  selector:
+    app: mroom
+  template:
+    metadata:
+      labels:
+        app: mroom
+    spec:
+      containers:
+      - name: mroom
+        image: mroom
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Never
