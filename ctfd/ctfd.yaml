@@ -1,19 +1,19 @@
 apiVersion: apps/v1beta2
 kind: ReplicaSet
 metadata:
-  name: kubia
+  name: ctfd
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: kubia
+      app: ctfd
   template: 
     metadata:
       labels:
-        app: kubia
+        app: ctfd
     spec:
       containers:
-      - name: kubia
-        image: luksa/kubia 
+      - name: ctfd
+        image: ctfd_ctfd
         imagePullPolicy: Never
-#      dnsPolicy: Default
+
