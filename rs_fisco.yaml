@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: kubia
+  name: fisco
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: kubia
+      app: fisco
   template: 
     metadata:
       labels:
-        app: kubia
+        app: fisco
     spec:
       containers:
-      - name: kubia
-        image: luksa/kubia 
+      - name: fisco
+        image: 99kies/python_sdk
         imagePullPolicy: Never
 #      dnsPolicy: Default

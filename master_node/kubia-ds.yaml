@@ -16,4 +16,4 @@ spec:
       containers:
       - name: main
         image: luksa/kubia
-#        imagePullPolicy: Never 
+        imagePullPolicy: Never 

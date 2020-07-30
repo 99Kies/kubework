@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: fisco
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fisco
+  template: 
+    metadata:
+      labels:
+        app: fisco
+    spec:
+      containers:
+      - name: fisco
+        image: 99kies/python_sdk
+#        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
+        command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
+
+#      dnsPolicy: Default
